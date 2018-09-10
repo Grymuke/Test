@@ -4,7 +4,15 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+			sh'Exec Shell Command'
                 echo 'Building..'
+				cd git
+				git checkout zip
+				zip < zip > zipfile.zip
+				scp /home/artjoms/git/zipfile.zip artem@142.93.32.214:/home/artem/zipfile.zip
+				scp /home/artjoms/git/unzip.txt artem@142.93.32.214:/home/artem/unzip.txt
+				ssh -f artem@142.93.32.214 "bash unzip.txt"
+				ssh -f artem@142.93.32.214 "unzip /home/artem/zipfile.zip"
             }
         }
         stage('Deploy') {
@@ -14,3 +22,7 @@ pipeline {
         }
     }
 }
+
+
+
+
