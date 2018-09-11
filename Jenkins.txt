@@ -4,8 +4,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+	    sh'ls'
 			sh'''
-                echo 'Building..'
+                echo 'Building..'		 		
 				cd /home/artjoms/git
 				git checkout zip
 				zip < zip > zipfile.zip
