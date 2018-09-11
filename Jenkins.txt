@@ -4,7 +4,11 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+	    echo 'CURRENT DIRECTORY...'
 	    sh'ls'
+	    echo 'CURRENT USER...'
+	    sh'whoami '
+	    echo '........'
 			sh'''
                 echo 'Building..'		 		
 				git checkout zip
