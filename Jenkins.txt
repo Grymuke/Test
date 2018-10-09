@@ -15,7 +15,7 @@ pipeline {
 				git checkout zip
 				zip < zip > zipfile.zip
 				scp -o StrictHostKeyChecking=no /home/artjoms/git/zipfile.zip artem@142.93.32.214:/home/artjoms/zipfile.zip
-				scp /home/artjoms/git/unzip.txt artem@142.93.32.214:/home/artem/unzip.txt
+				scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artem/unzip.txt
 				ssh -f artem@142.93.32.214 "bash unzip.txt"
 				ssh -f artem@142.93.32.214 "unzip /home/artem/zipfile.zip"
 			'''	
