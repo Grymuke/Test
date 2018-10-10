@@ -23,7 +23,7 @@ pipeline {
         stage('Unzipping') {
             steps {
                 echo 'Unzip file....'
-		sh 'ssh -f artjoms@142.93.32.214 ""bash unzip.txt""'
+		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
             }
         }
     }
