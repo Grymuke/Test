@@ -17,7 +17,6 @@ pipeline {
 		scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
 		echo 'Unzip file..'
 		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
-		ssh -f artjoms@142.93.32.214 "unzip /home/artjoms/zipfile.zip"
 		'''	
 				
 
