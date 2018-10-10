@@ -16,6 +16,7 @@ pipeline {
 		zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip
 		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 		scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
+		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
 		'''
 		
             }
