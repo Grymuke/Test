@@ -12,8 +12,8 @@ pipeline {
 	    echo '........'
 		sh'''
                 echo 'Building..'		 		
-		zip -r zipfile.zip /var/lib/jenkins/workspace/Uzdevums 2
-		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums 2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
+		zip -r zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2
+		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 		scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
 		echo 'Unzip file..'
 		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
