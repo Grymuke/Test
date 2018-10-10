@@ -10,7 +10,6 @@ pipeline {
 	    echo 'CURRENT USER...'
 	    sh'whoami '
 	    echo '........'
-	     sh'ls -al /home/artjoms/git/'
 			sh'''
                 echo 'Building..'		 		
 				git checkout zip
