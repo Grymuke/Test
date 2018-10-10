@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
 	    echo 'CURRENT DIRECTORY...'
+	    sh'pwd'
 	    sh'ls'
 	    echo 'CURRENT USER...'
 	    sh'whoami '
