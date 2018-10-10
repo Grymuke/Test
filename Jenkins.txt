@@ -10,11 +10,11 @@ pipeline {
 	    echo 'CURRENT USER...'
 	    sh'whoami '
 	    echo '........'
+	    sh'cd ..'
 			sh'''
                 echo 'Building..'		 		
-				git checkout zip
-				zip < zip > zipfile.zip
-				scp -o StrictHostKeyChecking=no /home/artjoms/git/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
+				Uzdevums2 < zip > zipfile.zip
+				scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 				scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
 		echo 'Unzip file..'
 				ssh -f artjoms@142.93.32.214 "bash unzip.txt"
