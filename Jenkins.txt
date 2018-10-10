@@ -4,22 +4,23 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-	    echo 'CURRENT DIRECTORY...'
-	    sh'pwd'
-	    sh'ls'
 	    echo 'CURRENT USER...'
 	    sh'whoami '
+	    echo 'CURRENT DIRECTORY...'
+	    sh'pwd'
+	    sh'ls'	    
 	    echo '........'
 	    sh'cd ..'
-			sh'''
+	    sh'pwd'
+		sh'''
                 echo 'Building..'		 		
-				Uzdevums2 < zip > zipfile.zip
-				scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
+		Test < zip > zipfile.zip
+		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 				scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
 		echo 'Unzip file..'
-				ssh -f artjoms@142.93.32.214 "bash unzip.txt"
-				ssh -f artjoms@142.93.32.214 "unzip /home/artjoms/zipfile.zip"
-			'''	
+		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
+		ssh -f artjoms@142.93.32.214 "unzip /home/artjoms/zipfile.zip"
+		'''	
 				
 
             }
