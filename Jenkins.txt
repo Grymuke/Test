@@ -10,7 +10,7 @@ pipeline {
 	    sh'pwd'
 	    sh'ls'	    
 	    echo '........'
-	    sh'cd /var/lib/jenkins/workspace'
+	    sh'cd /var/lib/jenkins/workspace && ${cmd}'
 	    sh'pwd'
 		sh'''
                 echo 'Building..'		 		
