@@ -10,13 +10,11 @@ pipeline {
 	    sh'pwd'
 	    sh'ls'	    
 	    echo '........'
-	    sh'cd /var/lib/jenkins/workspace && ${cmd}'
-	    sh'pwd'
 		sh'''
                 echo 'Building..'		 		
-		Test < zip > zipfile.zip
-		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
-				scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
+		zip -r zipfile.zip /var/lib/jenkins/workspace/Test
+		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums 2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
+		scp /home/artjoms/git/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
 		echo 'Unzip file..'
 		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
 		ssh -f artjoms@142.93.32.214 "unzip /home/artjoms/zipfile.zip"
