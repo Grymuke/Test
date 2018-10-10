@@ -20,6 +20,7 @@ pipeline {
 		'''
 	    
 		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
+		sh 'ssh -f artjoms@142.93.32.214 "date"'
             }
         }
         stage('Deploy') {
