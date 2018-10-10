@@ -1,1 +1,1 @@
-unzip /home/artem/zipfile.zip
+unzip /home/artjoms/zipfile.zip
