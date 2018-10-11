@@ -9,8 +9,15 @@ pipeline {
                 echo 'Unzip file....'
 		sh'''
 		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
-		sh 'sleep 10s'		
+		sh 'sleep 10s'
 		
+		ssh_host="artjoms@142.93.32.214"
+		file="zip"
+		if ssh $ssh_host test -e $file;
+    			then echo 'file exists'
+    			else echo 'file does not exist' 
+			sh 'sleep 10s'
+		fi		
 		'''
 		
 		
