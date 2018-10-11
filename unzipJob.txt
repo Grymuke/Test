@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Unzip file....'
 		sh'''
-		sh 'ssh -f artjoms@142.93.32.214 bash privet.txt'
+		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
 		sh 'sleep 10s'		
 		
 		'''
