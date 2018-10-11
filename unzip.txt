@@ -1,1 +1,2 @@
 unzip /home/artjoms/zipfile.zip
+echo I am unzipping the file, u see?
