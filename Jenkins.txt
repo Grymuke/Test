@@ -1,7 +1,7 @@
 pipeline {
     agent any
-    stages {
-        stage('*Zip*') {
+    node {
+        stage('Zip') {
             steps {	    
 	    	echo 'CURRENT USER...'
 	    	sh 'whoami '
@@ -12,22 +12,24 @@ pipeline {
 	   	echo '..............................................'
                 echo 'Zipping file..'		 		
 		sh 'zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip'
+		stage 'Copy'
+		stage 'Unzip'
 		}
         }
-	stage('*Copy*') {
+    }
+	stage('Copy') {
             steps {
 	    	sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip' artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 		sh 'scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt'
 	   	}
 	}
-        stage('*Unzip*') {
+        stage('Unzip') {
             steps {
                 echo 'Unzip file....'
 		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
 		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
             	}
         }
-    }
     post {
 	always {
 		cleanWs()
