@@ -1,11 +1,12 @@
 pipeline {
 	agent any
+	options {
+      		timeout(time: 40, unit: 'SECONDS') 
+ 		}
     stages {
         stage('Unzip') {
             steps {
                 echo 'Unzip file....'
-		sh 'ssh -f artjoms@142.93.32.214 pwd'
-		sh 'ssh -f artjoms@142.93.32.214 ls -l'
 		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
             	}
         }
