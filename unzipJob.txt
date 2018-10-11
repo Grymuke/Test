@@ -9,7 +9,9 @@ pipeline {
                 echo 'Unzip file....'
 		sh'''
 		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
-		sh 'sleep 10s'
+		sh 'sleep 10s'		
+		
+		'''
 		
 		
             	}
