@@ -13,7 +13,9 @@ pipeline {
                 echo 'Zipping file..'		 		
 		sh 'zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip'
 		stage 'Copy'
+		sh'make all'
 		stage 'Unzip'
+		sh'make all'
 		}
         }
     }
