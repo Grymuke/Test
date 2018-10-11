@@ -7,10 +7,10 @@ pipeline {
         stage('Unzip') {
             steps {
                 echo 'Unzip file....'
-		sh'''
 		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
 		sh 'sleep 10s'
 		
+		sh'''		
 		ssh_host="artjoms@142.93.32.214"
 		file="zip"
 		if ssh $ssh_host test -e $file;
