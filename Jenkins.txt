@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    stages {
+    node {
         stage('Zip') {
             steps {	    
 	    	echo 'CURRENT USER...'
@@ -14,12 +14,16 @@ pipeline {
 		sh 'zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip'
 		}
         }
+	}
+	node{
 	stage('Copy') {
             steps {
 	    	sh 'scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip' artjoms@142.93.32.214:/home/artjoms/zipfile.zip
 		sh 'scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt'
 	   	}
 	}
+	}
+	node{
         stage('Unzip') {
             steps {
                 echo 'Unzip file....'
@@ -34,12 +38,3 @@ pipeline {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
