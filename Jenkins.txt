@@ -1,29 +1,35 @@
 pipeline {
     agent any
-
+    environment{
+    }
     stages {
-        stage('Copy/Zip') {
+        stage('*Zip*') {
             steps {
 	    
 	    echo 'CURRENT USER...'
-	    sh'whoami '
+	    sh 'whoami '
+	    echo '..............................................'
 	    echo 'CURRENT DIRECTORY...'
-	    sh'pwd'
-	    sh'ls'	    
-	    echo '........'
-		sh'''
-                echo 'Building..'		 		
-		zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip
-		scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
-		scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
-		ssh -f artjoms@142.93.32.214 "bash unzip.txt"
-		'''
-		
-            }
+	    sh 'pwd'
+	    sh 'ls'	    
+	    echo '..............................................'
+                echo 'Zipping file..'		 		
+		sh 'zip -j zipfile.zip /var/lib/jenkins/workspace/Uzdevums_2/zip'
+		}
         }
-        stage('Unzipping') {
+	stage('*Copy*') {
+            steps {
+	    sh'''
+	    	scp -o StrictHostKeyChecking=no /var/lib/jenkins/workspace/Uzdevums_2/zipfile.zip artjoms@142.93.32.214:/home/artjoms/zipfile.zip
+		scp /var/lib/jenkins/workspace/Uzdevums_2/unzip.txt artjoms@142.93.32.214:/home/artjoms/unzip.txt
+	    '''
+	    }
+	}
+        stage('*Unzip*') {
             steps {
                 echo 'Unzip file....'
+		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
+		sh 'ssh -f artjoms@142.93.32.214 "bash unzip.txt"'
             }
         }
     }
