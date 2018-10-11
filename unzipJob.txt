@@ -8,6 +8,7 @@ pipeline {
             steps {
                 echo 'Unzip file....'
 		sh'''
+		sh 'ssh -f artjoms@142.93.32.214 bash unzip.txt'
 		
 		ssh_host="artjoms@142.93.32.214"
 		file="zip"
