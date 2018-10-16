@@ -1,0 +1,20 @@
+pipeline {
+	agent {label 'SlaveServer'
+  }
+    stages {
+        stage('Unzip') {
+            steps {
+                echo 'Unzip file....'
+                sh 'java -version'
+                sh 'pwd'
+		
+		
+            	}
+        }
+    }
+    post {
+	always {
+		cleanWs()
+		}
+	}
+}
