@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Unzip') {
             steps {
+	    	s 'whoami'
                 echo 'Unzip file....'
                 sh 'java -version'
                 sh 'pwd'
