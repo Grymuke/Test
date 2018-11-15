@@ -13,7 +13,7 @@ pipeline {
 		sh '''
 		if [ ! -d "test" ];
                     then
-		        sh 'mkdir test'
+		        mkdir test
                     else
                         echo "Directory already exists"			
                 fi
