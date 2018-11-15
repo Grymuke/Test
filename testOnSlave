@@ -17,7 +17,7 @@ pipeline {
                     else
                         echo "Directory already exists"			
                 fi
-		sh '''
+		'''
 		
 		dir ("test") {
 		    sh 'stampdir_name=$(date +%Y%m%d_%H%M%S)'
