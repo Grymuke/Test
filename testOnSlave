@@ -9,7 +9,7 @@ pipeline {
                 sh 'java -version'
                 sh 'pwd'
 		
-		parentdir_name='test'
+		sh 'parentdir_name='test''
 		sh '''
 		if [ ! -d "$parentdir_name" ];
                     then
