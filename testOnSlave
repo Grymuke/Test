@@ -9,11 +9,11 @@ pipeline {
                 sh 'java -version'
                 sh 'pwd'
 		
-		sh 'parentdir_name='test''
+		
 		sh '''
-		if [ ! -d "$parentdir_name" ];
+		if [ ! -d "test" ];
                     then
-		        sh 'mkdir $parentdir_name'
+		        sh 'mkdir test'
                     else
                         echo $"Directory already exists"			
                 fi
