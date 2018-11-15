@@ -9,10 +9,11 @@ pipeline {
                 sh 'java -version'
                 sh 'pwd'
 		sh 'mkdir test'
-		sh 'cd test'
-		sh 'mkdir $(date +%Y%m%d_%H%M%S)'
+		dir ('test') {
+        		sh 'mkdir $(date +%Y%m%d_%H%M%S)'
+    		}
 		
-            	}
+            }
         }
     }
     //post {
