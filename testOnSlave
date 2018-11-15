@@ -8,7 +8,7 @@ pipeline {
                 echo 'Unzip file....'
                 sh 'java -version'
                 sh 'pwd'
-		sh 'mkidr test'
+		sh 'mkdir test'
 		sh 'cd test'
 		sh 'mkdir $(date +%Y%m%d_%H%M%S)'
 		
