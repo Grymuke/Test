@@ -19,7 +19,7 @@ pipeline {
                 fi
 		sh '''
 		
-		dir ($parentdir_name) {
+		dir ("test") {
 		    sh 'stampdir_name=$(date +%Y%m%d_%H%M%S)'
 		    sh 'mkdir stampdir_name'
     		}
