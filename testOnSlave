@@ -15,7 +15,7 @@ pipeline {
                     then
 		        sh 'mkdir test'
                     else
-                        echo $"Directory already exists"			
+                        echo "Directory already exists"			
                 fi
 		sh '''
 		
