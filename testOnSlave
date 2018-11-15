@@ -10,11 +10,11 @@ pipeline {
                 sh 'pwd'
 		
 		parentdir_name='test'
-		if ( -d $parentdir_name )
+		if [ ! -d "$parentdir_name" ];
                     then
-                        echo $"Directory already exists"
+		        sh 'mkdir $parentdir_name'
                     else
-                        sh 'mkdir $parentdir_name'
+                        echo $"Directory already exists"			
                 fi
 		
 		dir ($parentdir_name) {
