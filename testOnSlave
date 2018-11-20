@@ -12,7 +12,7 @@ pipeline {
 		sh '''
 		stampdir=$(date +%Y%m%d_%H%M%S)
                 parentdir='installedPackages/'
-		bothdir=$parentdire $stampdir
+		bothdir=$parentdir $stampdir
 		if [ ! -d $bothdir ];
                     then
 		        mkdir $bothdir
