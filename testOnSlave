@@ -18,11 +18,11 @@ pipeline {
                         echo "Directory already exists"			
                 fi
 		'''
-		
+		//echo 'making dir "$stampdir_name"'
 		dir ("test") {
 		sh'''
 		    stampdir_name=$(date +%Y%m%d_%H%M%S)
-		    //echo 'making dir "$stampdir_name"'
+		    
 		    mkdir $stampdir_name
 		    cp /home/artem/slaveTest/workspace/TestOnSlave/unzip.txt /home/artem/slaveTest/workspace/TestOnSlave/test/$stampdir_name
 		'''
