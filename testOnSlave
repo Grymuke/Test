@@ -13,6 +13,12 @@ pipeline {
 		stampdir=$(date +%Y%m%d_%H%M%S)
                 parentdir='installedPackages/'
 		bothdir=$parentdir$stampdir
+		if [ ! -d $parentdir ];
+                    then
+		        mkdir $parentdir
+                    else
+                        echo "Directory already exists"			
+                fi
 		if [ ! -d $bothdir ];
                     then
 		        mkdir $bothdir
