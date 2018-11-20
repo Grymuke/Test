@@ -12,7 +12,7 @@ pipeline {
 		sh '''
 		    stamdir_name = $(date +%Y%m%d_%H%M%S)
                     parentdir_name = 'installedPackages/'
-		    bothdir_name=$parentdir_name+$stamdir_name
+		    bothdir_name=$parentdir_name$stamdir_name
 		    
 
                     if [ ! -d $bothdir_name ]
