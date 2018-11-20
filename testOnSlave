@@ -10,8 +10,8 @@ pipeline {
                 sh 'pwd'
 		
 		sh '''
-		stampdir = $(date +%Y%m%d_%H%M%S)
-                parentdir = 'installedPackages/'
+		stampdir=$(date +%Y%m%d_%H%M%S)
+                parentdir='installedPackages/'
 		bothdir=$parentdire $stampdir
 		if [ ! -d $bothdir ];
                     then
