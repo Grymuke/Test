@@ -8,7 +8,20 @@ pipeline {
                 echo 'Unzip file....'
                 sh 'java -version'
                 sh 'pwd'
-		//bothdir_name=$parentdir_name $stamdir_name
+		
+		sh '''
+		install="test"
+		stampdir = '/$(date +%Y%m%d_%H%M%S)'
+                parentdir = 'installedPackages/'$stampdir
+		bothdir=$parentdire $stamdir
+		if [ ! -d $bothdir ];
+                    then
+		        mkdir $bothdir
+                    else
+                        echo "Directory already exists"			
+                fi
+		'''
+		
 		
 		
 		sh '''
