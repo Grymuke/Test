@@ -11,7 +11,8 @@ pipeline {
 		
 		
 		sh '''
-		if [ ! -d "test" ];
+		install="test"
+		if [ ! -d $install ];
                     then
 		        mkdir test
                     else
