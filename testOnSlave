@@ -9,19 +9,7 @@ pipeline {
                 sh 'java -version'
                 sh 'pwd'
 		//bothdir_name=$parentdir_name $stamdir_name
-		sh '''
-		    stamdir_name=$(date +%Y%m%d_%H%M%S)
-                    parentdir_name='installedPackages/'
-		    bothdir_name=$parentdir_name $stamdir_name
-		    	    
-
-                    if [ ! -d $bothdir_name ]
-                    then
-                        mkdir $bothdir_name
-                    else
-                        echo "Directory already exists"
-                    fi
-		'''
+		
 		
 		sh '''
 		install="test"
