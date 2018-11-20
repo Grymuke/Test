@@ -9,6 +9,7 @@ pipeline {
                 sh 'java -version'
                 sh 'pwd'
 		
+		sh '''
 		stampdir_name = '/$(date +%Y%m%d_%H%M%S)'
                     parentdir_name = 'installedPackages'$stampdir_name                    
 
@@ -18,6 +19,7 @@ pipeline {
                     else
                         mkdir $directory_name
                     fi
+		'''
 		
 		sh '''
 		install="test"
