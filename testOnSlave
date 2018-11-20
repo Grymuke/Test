@@ -20,9 +20,11 @@ pipeline {
 		'''
 		
 		dir ("test") {
+		    sh'''
+		    echo 'making dir'
 		    sh 'stampdir_name=$(date +%Y%m%d_%H%M%S)'
-		    echo 'making dir' echo $stampdir_name
 		    sh 'mkdir "$stampdir_name"'
+		    '''
     		}
 		
             }
