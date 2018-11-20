@@ -11,7 +11,7 @@ pipeline {
 		
 		sh '''
 		stampdir = $(date +%Y%m%d_%H%M%S)
-                parentdir = 'installedPackages/'$stampdir
+                parentdir = 'installedPackages/'
 		bothdir=$parentdire $stampdir
 		if [ ! -d $bothdir ];
                     then
