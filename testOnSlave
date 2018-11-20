@@ -10,10 +10,9 @@ pipeline {
                 sh 'pwd'
 		
 		sh '''
-		install="test"
-		stampdir = '$(date +%Y%m%d_%H%M%S)'
+		stampdir = $(date +%Y%m%d_%H%M%S)
                 parentdir = 'installedPackages/'$stampdir
-		bothdir=$parentdire $stamdir
+		bothdir=$parentdire $stampdir
 		if [ ! -d $bothdir ];
                     then
 		        mkdir $bothdir
