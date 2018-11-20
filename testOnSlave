@@ -25,6 +25,9 @@ pipeline {
                     else
                         echo "Directory already exists"			
                 fi
+		
+		mv /home/artem/slaveTest/workspace/TestOnSlave/unzip.txt /home/artem/slaveTest/workspace/TestOnSlave/$bothdir
+		
 		'''
 		
 		
